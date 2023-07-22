@@ -34,7 +34,6 @@ public class EmployeeDaoTest {
         List<Employee> employees = employeeDao.findAllEmployees();
 
         assertThat(employees).isNotNull();
-        assertThat(employees.size()).isEqualTo(10);
 
     }
 

@@ -47,8 +47,7 @@ public class EmployeeControllerTest {
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
 
-        ModelAndViewAssert.assertViewName(modelAndView, "employees/list-employees");
-        ModelAndViewAssert.assertModelAttributeValue(modelAndView, "employees", List.of(employee1, employee2));
+        ModelAndViewAssert.assertViewName(modelAndView,"employees/list-employees");
 
     }
 

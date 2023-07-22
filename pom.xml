@@ -11,10 +11,10 @@
 	</parent>
 	
 	<groupId>com.company.securitycrud</groupId>
-	<artifactId>employee-directory-spring-mvc</artifactId>
+	<artifactId>personnel-management-system</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>employee-directory-spring-mvc</name>
-	<description>employee-directory-spring-mvc</description>
+	<name>personnel-management-system</name>
+	<description>personnel-management-system</description>
 	
 	<properties>
 		<java.version>17</java.version>

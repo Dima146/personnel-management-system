@@ -13,7 +13,7 @@ The administrator has access to all the functionality of the program, while a us
 * Spring JDBC Template to access data stored in a relational database
 * Spring Web MVC - a framework that built on model-view-controller pattern for developing web applications
 * Spring Security - a framework that provides authentication, authorization, and protection against common attacks
-* Spring Boot 3.0.6 - a tool that makes developing web application Java Spring Framework faster and easier
+* Spring Boot 3.0.6 RELEASE - a tool that makes developing web application Java Spring Framework faster and easier
 * Hibernate Validator - an implementation of Jakarta Bean Validation for data validation
 * JUnit 5 and Mockito for testing (all the layers of architecture covered with tests)
 * Thymeleaf - a server-side Java template engine to generate HTML pages
@@ -21,8 +21,13 @@ The administrator has access to all the functionality of the program, while a us
 * Database: MySQL 8.0.32
 * Build tool: Maven
 
-
-![](sql-scripts/personnel-management-system.png)
+### Installation
+Steps to run the application:
+1. Clone the project https://github.com/Dima146/personnel-management-system.git.
+2. Execute *personnel-management-system.sql* in /sql-scripts to create and populate the database.
+3. Build the project: `mvn package` or `mvn install` in a project directory.
+4. Run the application:`mvn spring-boot:run` or `java -jar target/personnel-management-system-1.0.0-SNAPSHOT`.
+5. Use an access URL: `http://localhost:8080/personnel-management-system`
 
 
 

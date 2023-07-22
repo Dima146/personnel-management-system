@@ -38,12 +38,11 @@ CREATE TABLE `user` (
 --
 -- NOTE: The passwords are encrypted using BCrypt
 --
--- Default passwords here are: fun123
+-- Default passwords here are: fun123 for susan(ADMIN) and mary(MANAGER)
 --
 
 INSERT INTO `user` (`username`,`password`,`enabled`, `first_name`, `last_name`, `email`)
-VALUES 
-('john','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1,'John', 'Doe', 'john@mail.com'),
+VALUES
 ('mary','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1,'Mary', 'Smith', 'mary@mail.com'),
 ('susan','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1,'Susan', 'Public', 'susan@mail.com');
 
