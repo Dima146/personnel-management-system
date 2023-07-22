@@ -17,9 +17,10 @@ The administrator has access to all the functionality of the program, while a us
 * Hibernate Validator
 * JUnit 5 and Mockito (all the layers of architecture covered with tests)
 * Thymeleaf (a server-side Java template engine to generate HTML pages)
-* Bootstrap 5.2.2
-* Database: MySQL 8.0.32
+* Logback logger
 * Build tool: Maven
+* Database: MySQL 8.0.32
+* Bootstrap 5.2.2
 
 ### Installation
 Steps to run the application:
