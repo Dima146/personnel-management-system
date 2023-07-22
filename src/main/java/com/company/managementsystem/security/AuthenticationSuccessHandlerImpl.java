@@ -41,7 +41,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         session.setAttribute("user", user.get());
 
         response.setStatus(HttpServletResponse.SC_OK);
-        response.sendRedirect("/user/profile");
+        response.sendRedirect(request.getContextPath() + "/user/profile");
 
     }
 }
