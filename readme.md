@@ -24,9 +24,17 @@ The administrator has access to all the functionality of the program, while a us
 ### Installation
 Steps to run the application:
 1. Clone the project https://github.com/Dima146/personnel-management-system.git.
-2. Execute *personnel-management-system.sql* in /sql-scripts to create and populate the database.
-3. Build the project: `mvn package` or `mvn install` in a project directory.
-4. Run the application:`mvn spring-boot:run` or `java -jar target/personnel-management-system-1.0.0-SNAPSHOT`.
+
+
+2. Execute *personnel-management-system.sql* in */sql-scripts* to create and populate the database.
+
+
+3. Build the project in a project directory `mvn package` or `mvn install`.
+
+ 
+4. Run the application: `mvn spring-boot:run` or `java -jar target/personnel-management-system-1.0.0-SNAPSHOT`.
+
+
 5. Use an access URL: `http://localhost:8080/personnel-management-system`
 
 
