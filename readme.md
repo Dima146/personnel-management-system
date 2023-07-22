@@ -36,27 +36,3 @@ Steps to run the application:
 
 
 5. Use an access URL: `http://localhost:8080/personnel-management-system`
-
-
-
-[//]: # (* JDK version: 17)
-
-[//]: # (* Spring JDBC Template to access data stored in a relational database)
-
-[//]: # (* Spring Web MVC - a framework that built on model-view-controller pattern for developing web applications)
-
-[//]: # (* Spring Security - a framework that provides authentication, authorization, and protection against common attacks)
-
-[//]: # (* Spring Boot 3.0.6 RELEASE - a tool that makes developing web application Java Spring Framework faster and easier)
-
-[//]: # (* Hibernate Validator - an implementation of Jakarta Bean Validation for data validation)
-
-[//]: # (* JUnit 5 and Mockito for testing &#40;all the layers of architecture covered with tests&#41;)
-
-[//]: # (* Thymeleaf - a server-side Java template engine to generate HTML pages)
-
-[//]: # (* Bootstrap 5.2.2)
-
-[//]: # (* Database: MySQL 8.0.32)
-
-[//]: # (* Build tool: Maven)
