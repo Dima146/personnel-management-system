@@ -21,7 +21,6 @@ The administrator has access to all the functionality of the program, while a us
 * Database: MySQL 8.0.32
 * Build tool: Maven
 
-#
 ![](sql-scripts/personnel-management-system.png)
 
 
