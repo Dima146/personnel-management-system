@@ -1,7 +1,8 @@
 package com.company.managementsystem.service;
 
 import com.company.managementsystem.entity.Employee;
-import com.company.managementsystem.dao.EmployeeDaoImpl;
+import com.company.managementsystem.dao.impl.EmployeeDaoImpl;
+import com.company.managementsystem.service.impl.EmployeeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

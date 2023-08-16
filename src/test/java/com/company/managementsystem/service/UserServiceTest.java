@@ -2,8 +2,9 @@ package com.company.managementsystem.service;
 
 import com.company.managementsystem.entity.Role;
 import com.company.managementsystem.entity.User;
-import com.company.managementsystem.dao.RoleDaoImpl;
-import com.company.managementsystem.dao.UserDaoImpl;
+import com.company.managementsystem.dao.impl.RoleDaoImpl;
+import com.company.managementsystem.dao.impl.UserDaoImpl;
+import com.company.managementsystem.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

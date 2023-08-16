@@ -1,8 +1,8 @@
 package com.company.managementsystem.controller;
 
-import com.company.managementsystem.ThymeleafdemoApplication;
+import com.company.managementsystem.Application;
 import com.company.managementsystem.entity.Employee;
-import com.company.managementsystem.service.EmployeeServiceImpl;
+import com.company.managementsystem.service.impl.EmployeeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -23,7 +23,7 @@ import java.util.Optional;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
-@SpringBootTest(classes = ThymeleafdemoApplication.class)
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
 public class EmployeeControllerTest {

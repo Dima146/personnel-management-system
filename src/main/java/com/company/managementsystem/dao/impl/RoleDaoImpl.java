@@ -1,5 +1,6 @@
-package com.company.managementsystem.dao;
+package com.company.managementsystem.dao.impl;
 
+import com.company.managementsystem.dao.RoleDao;
 import com.company.managementsystem.entity.Role;
 import com.company.managementsystem.exception.DaoException;
 import com.company.managementsystem.dao.rowmapper.RoleRowMapper;

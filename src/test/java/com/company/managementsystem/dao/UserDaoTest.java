@@ -1,5 +1,7 @@
 package com.company.managementsystem.dao;
 
+import com.company.managementsystem.dao.impl.RoleDaoImpl;
+import com.company.managementsystem.dao.impl.UserDaoImpl;
 import com.company.managementsystem.dao.rowmapper.RoleRowMapper;
 import com.company.managementsystem.dao.rowmapper.UserRowMapper;
 import com.company.managementsystem.entity.Role;

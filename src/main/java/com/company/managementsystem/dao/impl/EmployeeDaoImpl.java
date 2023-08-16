@@ -1,5 +1,6 @@
-package com.company.managementsystem.dao;
+package com.company.managementsystem.dao.impl;
 
+import com.company.managementsystem.dao.EmployeeDao;
 import com.company.managementsystem.entity.Employee;
 import com.company.managementsystem.exception.DaoException;
 import com.company.managementsystem.dao.rowmapper.EmployeeRowMapper;

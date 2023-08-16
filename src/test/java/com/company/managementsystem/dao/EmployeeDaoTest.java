@@ -1,5 +1,6 @@
 package com.company.managementsystem.dao;
 
+import com.company.managementsystem.dao.impl.EmployeeDaoImpl;
 import com.company.managementsystem.dao.rowmapper.EmployeeRowMapper;
 import com.company.managementsystem.entity.Employee;
 import org.junit.jupiter.api.Test;

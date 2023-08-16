@@ -1,8 +1,8 @@
 package com.company.managementsystem.controller;
 
-import com.company.managementsystem.ThymeleafdemoApplication;
+import com.company.managementsystem.Application;
 import com.company.managementsystem.entity.User;
-import com.company.managementsystem.service.UserServiceImpl;
+import com.company.managementsystem.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.doNothing;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@SpringBootTest(classes = ThymeleafdemoApplication.class)
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
 public class RegistrationControllerTest {

@@ -1,9 +1,10 @@
-package com.company.managementsystem.service;
+package com.company.managementsystem.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 import com.company.managementsystem.dao.EmployeeDao;
 import com.company.managementsystem.exception.EntityNotFoundException;
+import com.company.managementsystem.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.managementsystem.entity.Employee;

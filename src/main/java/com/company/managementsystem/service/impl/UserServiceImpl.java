@@ -1,4 +1,4 @@
-package com.company.managementsystem.service;
+package com.company.managementsystem.service.impl;
 
 import com.company.managementsystem.dao.RoleDao;
 import com.company.managementsystem.dao.UserDao;
@@ -6,6 +6,7 @@ import com.company.managementsystem.entity.Role;
 import com.company.managementsystem.entity.User;
 
 import com.company.managementsystem.exception.EntityNotFoundException;
+import com.company.managementsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

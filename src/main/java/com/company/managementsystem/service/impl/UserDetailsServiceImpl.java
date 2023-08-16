@@ -1,4 +1,4 @@
-package com.company.managementsystem.service;
+package com.company.managementsystem.service.impl;
 
 import com.company.managementsystem.dao.UserDao;
 import com.company.managementsystem.entity.Role;

@@ -1,5 +1,6 @@
-package com.company.managementsystem.dao;
+package com.company.managementsystem.dao.impl;
 
+import com.company.managementsystem.dao.UserDao;
 import com.company.managementsystem.entity.Role;
 import com.company.managementsystem.entity.User;
 import com.company.managementsystem.exception.DaoException;
