@@ -45,45 +45,35 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public List<Employee> findAllEmployees() {
         List<Employee> employees;
-
         try {
             employees = jdbcTemplate.query(FIND_ALL_EMPLOYEES, employeeRowMapper);
-
+            return employees;
         } catch (DataAccessException exception) {
             LOGGER.error("Error while retrieving all employees", exception);
             throw new DaoException(exception);
         }
-
-        return employees;
     }
 
     @Override
     public List<Employee> findEmployeesByFirstNameOrLastName(String name) {
         List<Employee> employees;
-
         try {
             employees = jdbcTemplate.query(FIND_EMPLOYEES_BY_FIRST_OR_LAST_NAME, employeeRowMapper, name, name);
-
+            return employees;
         } catch (DataAccessException exception) {
             LOGGER.error("Error while retrieving an employee by first or last name", exception);
             throw new DaoException(exception);
         }
-
-        return employees;
     }
 
     @Override
     public Employee findEmployeeByEmail(String email) {
         Employee employee;
-
         try {
             employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_EMAIL, employeeRowMapper, email);
-
             return employee;
-
         } catch (EmptyResultDataAccessException exception) {
             return null;
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while retrieving an employee by email", exception);
             throw new DaoException(exception);
@@ -92,14 +82,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee findEmployeeById(Long id) {
-
         Employee employee;
-
         try {
             employee = jdbcTemplate.queryForObject(FIND_EMPLOYEE_BY_ID, employeeRowMapper, id);
-
             return employee;
-
         } catch (EmptyResultDataAccessException exception) {
             return null;
         }
@@ -111,10 +97,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public void saveEmployee(Employee employee) {
-
         try {
             jdbcTemplate.update(SAVE_EMPLOYEE, employee.getFirstName(), employee.getLastName(), employee.getEmail());
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while saving an employee", exception);
             throw new DaoException(exception);
@@ -123,11 +107,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public void updateEmployee(Employee employee) {
-
         try {
             jdbcTemplate.update(UPDATE_EMPLOYEE, employee.getFirstName(), employee.getLastName(),
                                                  employee.getEmail(), employee.getId());
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while updating an employee", exception);
             throw new DaoException(exception);
@@ -136,10 +118,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public void deleteEmployee(Long id) {
-
         try {
             jdbcTemplate.update(DELETE_EMPLOYEE, id);
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while deleting an employee", exception);
             throw new DaoException(exception);

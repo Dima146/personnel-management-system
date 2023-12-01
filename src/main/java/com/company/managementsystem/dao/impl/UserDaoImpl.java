@@ -43,14 +43,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findUserByUsername(String username) {
         User user;
-
         try {
             user = jdbcTemplate.queryForObject(FIND_USER_BY_USERNAME, userRowMapper, username);
             return user;
-
         } catch (EmptyResultDataAccessException exception) {
             return null;
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while retrieving an user by username", exception);
             throw new RuntimeException(exception);
@@ -59,15 +56,12 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void saveUser(User user) {
-
         try {
             jdbcTemplate.update(SAVE_USER, user.getUsername(), user.getPassword(), user.isEnabled(),
                                             user.getFirstName(), user.getLastName(), user.getEmail());
-
             for (Role role : user.getRoles()) {
                 jdbcTemplate.update(SET_ASSOCIATION_USERS_ROLES, user.getUsername(), role.getName());
             }
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while saving an user", exception);
             throw new DaoException(exception);

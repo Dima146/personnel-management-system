@@ -1,4 +1,4 @@
-package com.company.managementsystem.validation;
+package com.company.managementsystem.service.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
@@ -27,17 +27,13 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 
             valid = firstObj == null && secondObj == null || firstObj != null && firstObj.equals(secondObj);
         } catch (final Exception ignore) {
-            // can be ignored
         }
-
         if (!valid) {
             context.buildConstraintViolationWithTemplate(message)
                     .addPropertyNode(firstFieldName)
                     .addConstraintViolation()
                     .disableDefaultConstraintViolation();
         }
-
         return valid;
     }
-
 }

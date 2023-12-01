@@ -1,6 +1,6 @@
-package com.company.managementsystem.dto;
+package com.company.managementsystem.controller.dto;
 
-import com.company.managementsystem.validation.FieldMatch;
+import com.company.managementsystem.service.validation.FieldMatch;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;

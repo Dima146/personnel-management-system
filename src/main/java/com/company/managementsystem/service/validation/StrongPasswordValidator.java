@@ -1,4 +1,4 @@
-package com.company.managementsystem.validation;
+package com.company.managementsystem.service.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
@@ -10,5 +10,4 @@ public class StrongPasswordValidator implements ConstraintValidator<StrongPasswo
 
         return value.matches("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!*()]).{8,}$");
     }
-
 }

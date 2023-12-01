@@ -30,14 +30,11 @@ public class RoleDaoImpl implements RoleDao {
     @Override
     public Role findRoleByName(String name) {
         Role role;
-
         try {
             role = jdbcTemplate.queryForObject(FIND_ROLE_BY_NAME, roleRowMapper, name);
             return role;
-
         } catch (EmptyResultDataAccessException exception) {
             return null;
-
         } catch (DataAccessException exception) {
             LOGGER.error("Error while retrieving an role by name", exception);
             throw new DaoException(exception);

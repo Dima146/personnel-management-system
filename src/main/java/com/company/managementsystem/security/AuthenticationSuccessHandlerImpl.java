@@ -30,16 +30,12 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
 
-
         HttpSession session = request.getSession();
-
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = ((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername();
 
         Optional<User> user = userService.findByUsername(username);
-
         session.setAttribute("user", user.get());
-
         response.setStatus(HttpServletResponse.SC_OK);
         response.sendRedirect(request.getContextPath() + "/user/profile");
 

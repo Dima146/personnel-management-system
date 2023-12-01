@@ -16,23 +16,18 @@ public class MvcExceptionHandler {
     public ModelAndView handleError(HttpServletRequest request, DaoException exception) {
 
         LOGGER.error("Request " + request.getRequestURI() + " throws " + exception);
-
         ModelAndView mav = new ModelAndView();
         mav.setViewName("error");
-
         return mav;
-
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ModelAndView handleError(HttpServletRequest request, EntityNotFoundException exception) {
 
         LOGGER.error("Request " + request.getRequestURI() + " throws " + exception);
-
         ModelAndView mav = new ModelAndView();
         mav.addObject("exception", exception);
         mav.setViewName("404");
         return mav;
-
     }
 }

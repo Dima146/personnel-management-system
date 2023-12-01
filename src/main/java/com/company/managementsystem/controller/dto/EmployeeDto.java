@@ -1,4 +1,4 @@
-package com.company.managementsystem.dto;
+package com.company.managementsystem.controller.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

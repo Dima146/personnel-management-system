@@ -1,14 +1,12 @@
 package com.company.managementsystem.controller;
 
-import com.company.managementsystem.dto.EmployeeDto;
-import com.company.managementsystem.dto.converter.DtoConverter;
+import com.company.managementsystem.controller.dto.EmployeeDto;
+import com.company.managementsystem.controller.dto.converter.DtoConverter;
 import com.company.managementsystem.entity.Employee;
 import com.company.managementsystem.service.EmployeeService;
-
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -17,7 +15,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -52,7 +49,6 @@ public class EmployeeController {
 						.stream()
 						.map(employeeDtoConverter::convertToDto)
 						.collect(Collectors.toList());
-
 		model.addAttribute("employees", employees);
 		return "employees/list-employees";
 
@@ -63,7 +59,6 @@ public class EmployeeController {
 
 		EmployeeDto employeeDto = new EmployeeDto();
 		model.addAttribute("employeeDto", employeeDto);
-
 		return "employees/employee-form";
 	}
 
@@ -76,7 +71,6 @@ public class EmployeeController {
 		if (bindingResult.hasErrors()) {
 			return "employees/employee-form";
 		}
-
 		String email = employeeDto.getEmail();
 		Optional<Employee> existingEmployee = employeeService.findByEmail(email);
 		if (existingEmployee.isPresent()) {
@@ -85,13 +79,11 @@ public class EmployeeController {
 
 			return "employees/employee-form";
 		}
-
 		Employee employee = employeeDtoConverter.convertToEntity(employeeDto);
 		employeeService.save(employee);
 		LOGGER.info("The employee with email: " + email + " has been successfully saved");
 		redirectAttributes.addFlashAttribute("added", "Employee with email: " + email
 					+ " has been successfully added");
-
 		return "redirect:/employees/list";
 
 	}
@@ -102,7 +94,6 @@ public class EmployeeController {
 		Employee employee = employeeService.findById(id);
 		EmployeeDto employeeDto = employeeDtoConverter.convertToDto(employee);
 		model.addAttribute("employeeDto", employeeDto);
-
 		return "employees/employee-update";
 	}
 
@@ -113,13 +104,10 @@ public class EmployeeController {
 		if (bindingResult.hasErrors()) {
 			return "employees/employee-update";
 		}
-
 		Employee employee = employeeDtoConverter.convertToEntity(employeeDto);
-
 		employeeService.update(employee);
 		LOGGER.info("Employee has been successfully updated");
 		redirectAttributes.addFlashAttribute("updated", "Employee has been successfully updated");
-
 		return "redirect:/employees/list";
 
 	}
@@ -127,9 +115,8 @@ public class EmployeeController {
 	@GetMapping("/delete")
 	public String delete(@RequestParam("employeeId") Long id, RedirectAttributes redirectAttributes) {
 		employeeService.deleteById(id);
-		LOGGER.info("Employee with id: " + id + " has been successfully deleted");
+		LOGGER.info("Employee with id {} has been successfully deleted", id);
 		redirectAttributes.addFlashAttribute("deleted", "Employee has been successfully deleted");
-
 		return "redirect:/employees/list";
 	}
 
@@ -143,9 +130,7 @@ public class EmployeeController {
 						.stream()
 						.map(employeeDtoConverter::convertToDto)
 						.collect(Collectors.toList());
-
 		model.addAttribute("employees", employees);
 		return "employees/list-employees";
-
 	}
 }

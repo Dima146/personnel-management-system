@@ -69,7 +69,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> searchEmployee(String name) {
 		List<Employee> employees = employeeDao.findEmployeesByFirstNameOrLastName(name);
-
 		return employees.isEmpty() ? findAll() : employees;
 	}
 

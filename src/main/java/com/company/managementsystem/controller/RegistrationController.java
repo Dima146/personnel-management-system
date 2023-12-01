@@ -1,10 +1,9 @@
 package com.company.managementsystem.controller;
 
-import com.company.managementsystem.dto.UserDto;
-import com.company.managementsystem.dto.converter.DtoConverter;
+import com.company.managementsystem.controller.dto.UserDto;
+import com.company.managementsystem.controller.dto.converter.DtoConverter;
 import com.company.managementsystem.entity.User;
 import com.company.managementsystem.service.UserService;
-
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,13 +29,11 @@ public class RegistrationController {
     @Autowired
     public RegistrationController(UserService userService, DtoConverter<User, UserDto> userDtoConverter) {
         this.userService = userService;
-
         this.userDtoConverter = userDtoConverter;
     }
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
-
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
@@ -44,9 +41,7 @@ public class RegistrationController {
     @GetMapping("/registrationForm")
     public String showRegistrationForm(Model model) {
         model.addAttribute("userDto", new UserDto());
-
         return "registration-form";
-
     }
 
     @PostMapping("/register")
@@ -63,7 +58,6 @@ public class RegistrationController {
         if (existingUser.isPresent()) {
             model.addAttribute("userDto", new UserDto());
             model.addAttribute("registrationError", "User with this username already exists");
-
             return "registration-form";
         }
 
@@ -72,9 +66,7 @@ public class RegistrationController {
         LOGGER.info("User with username: " + username + " has been successfully registered");
         redirectAttributes.addFlashAttribute("registered",
                 "You have been successfully registered. You can sign in into your account.");
-
-        return "redirect:/showLoginPage";
-
+        return "redirect:/login-page";
     }
 
     @GetMapping("/profile")

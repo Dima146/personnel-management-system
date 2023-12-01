@@ -30,13 +30,11 @@ public class SecurityConfig {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
         auth.setUserDetailsService(userDetailsService);
         auth.setPasswordEncoder(passwordEncoder());
-
         return auth;
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
         http.authorizeHttpRequests(configurer ->
                     configurer
 
@@ -47,14 +45,12 @@ public class SecurityConfig {
                             .requestMatchers("/employees/search").hasRole("EMPLOYEE")
                             .requestMatchers("/user/**").permitAll()
                             .anyRequest().authenticated())
-
                 .formLogin(form ->
                         form
                                 .loginPage("/showLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll()
                                 .successHandler(successHandler))
-
                 .logout(logout ->
                         logout.
                                 permitAll()
@@ -62,14 +58,10 @@ public class SecurityConfig {
                                 .invalidateHttpSession(true)
                                 .deleteCookies("JSESSIONID")
                                 .logoutSuccessUrl("/showLoginPage" + "?logout"))
-
                 .sessionManagement(session ->
                         session.invalidSessionUrl("/showLoginPage"))
-
                 .exceptionHandling(configurer ->
                         configurer.accessDeniedPage("/access-denied"));
-
         return http.build();
-
     }
 }
